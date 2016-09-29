@@ -1,0 +1,16 @@
+
+abstract class Producto{
+    public int id;
+    public Ubicacion ubicacion;
+
+
+
+
+    public Ubicacion obtenerUbicacion() {
+        return ubicacion;
+    }
+
+    public void establecerUbicacion(Ubicacion ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+}
