@@ -1,0 +1,4 @@
+public interface IProducto{
+        public void asignarActivoFijo()
+        public void asignarInsumo();
+}
