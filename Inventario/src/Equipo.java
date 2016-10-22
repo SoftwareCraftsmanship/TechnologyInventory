@@ -1,5 +1,3 @@
-package dominio;
-
 import java.util.Date;
 
 /**

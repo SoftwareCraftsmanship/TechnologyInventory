@@ -1,28 +1,32 @@
-package dominio;
-
 /**
  * Created by Analista_TI on 08/10/2016.
  */
-public class Sede {
+public class Regional {
 
-    private Ciudad ciudad;
+    private String codigo;
     private String nombre;
 
-    public Sede(final Ciudad ciudad, final String nombre)throws Exception {
-        if(ciudad== null)
+    public Regional(final String codigo, final String nombre)throws Exception {
+        if(codigo== null)
             throw new Exception();
 
         if(nombre== null)
             throw new Exception();
 
-        this.ciudad = ciudad;
+        this.codigo = codigo;
         this.nombre = nombre;
     }
 
+    public String obtenerCodigo() {
+        return codigo;
+    }
+
+    public String obtenerNombre() {
+        return nombre;
+    }
+
     public int hashCode(){
-        return this.nombre.hashCode()
-                +this.ciudad.obtenerCodigo().hashCode()
-                +this.ciudad.obtenerRegional().obtenerCodigo().hashCode();
+        return this.codigo.hashCode();
     }
 
     public boolean equals(final Object object){
@@ -35,8 +39,7 @@ public class Sede {
     }
 
     public String toString(){
-        return this.nombre
-                +this.ciudad.obtenerCodigo()
-                +this.ciudad.obtenerRegional().obtenerCodigo();
+        return codigo.toString();
     }
+
 }

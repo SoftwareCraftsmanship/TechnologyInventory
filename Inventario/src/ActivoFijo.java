@@ -1,14 +1,26 @@
-package dominio;
-
 import java.util.Date;
 
 /**
  * Created by Analista_TI on 08/10/2016.
  */
-public class Insumo extends Item {
+public class ActivoFijo extends Item {
 
-    public Insumo(String codigo, String nombre, String serial, Empleado responsable, Sede sede, Empleado auxiliar, Date fechaCompra) throws Exception {
+    private double valor;
+
+    public ActivoFijo(final String codigo, final String nombre, final String serial,
+                      final Empleado responsable,final Sede sede, final Empleado auxiliar,
+                      final Date fechaCompra,final double valor) throws Exception {
         super(codigo, nombre, serial, responsable, sede, auxiliar, fechaCompra);
+
+        if(valor ==0)
+            throw new Exception();
+
+        this.valor=valor;
+
+    }
+
+    public double obtenerValor(){
+        return this.valor;
     }
 
     public int hashCode(){
@@ -27,6 +39,5 @@ public class Insumo extends Item {
     public String toString(){
         return obtenerSerial().toString();
     }
-
 
 }
