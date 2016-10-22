@@ -1,3 +1,5 @@
+package dominio;
+
 import java.util.Date;
 
 /**
@@ -19,33 +21,36 @@ public abstract class Item {
 
     }
 
-    public Item(final String codigo,final String nombre,final String serial,
+    public Item(final String codigo,final String nombre,final String marca,final String serial,
                 final Empleado responsable,final  Sede sede,final Empleado auxiliar,
-                final Date fechaCompra) throws Exception{
+                final Date fechaCompra) throws DatoNoEncontrado{
         if(codigo== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(nombre== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
+        if(marca== null)
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(serial== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(responsable== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(sede== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(auxiliar== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(fechaCompra== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         this.codigo=codigo;
         this.nombre=nombre;
+        this.marca=marca;
         this.serial=serial;
         this.responsable=responsable;
         this.sede=sede;
@@ -57,17 +62,12 @@ public abstract class Item {
         return codigo;
     }
 
-
     public String obtenerNombre() {
         return nombre;
     }
 
     public String obtenerMarca() {
         return marca;
-    }
-
-    public void establecerMarca(final String marca) {
-        this.marca = marca;
     }
 
     public String obtenerSerial() {

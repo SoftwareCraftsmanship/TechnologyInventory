@@ -1,3 +1,5 @@
+package dominio;
+
 /**
  * Created by Analista_TI on 22/10/2016.
  */

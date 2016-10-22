@@ -1,3 +1,5 @@
+package dominio;
+
 /**
  * Created by Analista_TI on 08/10/2016.
  */
@@ -6,12 +8,12 @@ public class Sede {
     private Ciudad ciudad;
     private String nombre;
 
-    public Sede(final Ciudad ciudad, final String nombre)throws Exception {
+    public Sede(final Ciudad ciudad, final String nombre)throws DatoNoEncontrado {
         if(ciudad== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(nombre== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         this.ciudad = ciudad;
         this.nombre = nombre;

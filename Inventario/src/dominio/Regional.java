@@ -1,3 +1,5 @@
+package dominio;
+
 /**
  * Created by Analista_TI on 08/10/2016.
  */
@@ -6,12 +8,12 @@ public class Regional {
     private String codigo;
     private String nombre;
 
-    public Regional(final String codigo, final String nombre)throws Exception {
+    public Regional(final String codigo, final String nombre)throws DatoNoEncontrado {
         if(codigo== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(nombre== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         this.codigo = codigo;
         this.nombre = nombre;

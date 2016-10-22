@@ -1,3 +1,5 @@
+package dominio;
+
 /**
  * Created by Analista_TI on 08/10/2016.
  */
@@ -7,15 +9,15 @@ public class Ciudad {
     private String codigo;
     private String nombre;
 
-    public Ciudad(final String codigo,final  String nombre,final Regional regional)throws Exception {
+    public Ciudad(final String codigo,final  String nombre,final Regional regional)throws DatoNoEncontrado {
         if(codigo== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(nombre== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(regional== null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         this.codigo = codigo;
         this.nombre = nombre;

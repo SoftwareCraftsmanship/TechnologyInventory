@@ -1,3 +1,5 @@
+package dominio;
+
 import java.util.Date;
 
 /**
@@ -7,23 +9,25 @@ public class Equipo extends ActivoFijo {
 
     private String procesador;
     private String sistemaOperativo;
-    private String memoriaRAM;
+    private Capacidad memoriaRAM;
     private DiscoDuro discoDuro;
 
-    public Equipo(String codigo, String nombre, String serial, Empleado responsable, Sede sede, Empleado auxiliar, Date fechaCompra, double valor) throws Exception {
-        super(codigo, nombre, serial, responsable, sede, auxiliar, fechaCompra, valor);
+    public Equipo(final String codigo,final  String nombre,final String marca,final  String serial,final  Empleado responsable
+            ,final  Sede sede,final  Empleado auxiliar  ,final  Date fechaCompra,final  double valor,final String procesador
+            ,final String sistemaOperativo,final Capacidad memoriaRAM   ,final DiscoDuro discoDuro      ) throws DatoNoEncontrado {
+        super(codigo, nombre,marca, serial, responsable, sede, auxiliar, fechaCompra, valor);
 
         if(sistemaOperativo ==null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(procesador ==null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(memoriaRAM ==null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         if(discoDuro ==null)
-            throw new Exception();
+            throw new DatoNoEncontrado("",new NullPointerException());
 
         this.sistemaOperativo=sistemaOperativo;
         this.procesador=procesador;
@@ -40,7 +44,7 @@ public class Equipo extends ActivoFijo {
         return procesador;
     }
 
-    public String obtenerMemoriaRAM() {
+    public Capacidad obtenerMemoriaRAM() {
         return memoriaRAM;
     }
 
